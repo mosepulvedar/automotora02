@@ -5,7 +5,7 @@ from django.contrib import messages
 #nuevo comentario
 from django.contrib.auth.decorators import login_required
 #un decorador nos permite agregar funcionalidad a un metodo
-
+from django_xhtml2pdf.utils import pdf_decorator
 
 # Create your views here.
 
@@ -107,3 +107,11 @@ def modificar_automovil(request, id):
         return redirect('listado')
 
     return render(request, 'core/modificar_automovil.html', variables)
+
+@pdf_decorator(pdfname="autos.pdf")
+def auto_pdf(request):
+    autos = Automovil.objects.all()
+
+    return render(request, 'core/auto_pdf.html',{
+        'autos':autos
+    })

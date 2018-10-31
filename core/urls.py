@@ -8,4 +8,5 @@ urlpatterns = [
     path('formulario/', formulario , name="formulario"),
     path('eliminar/<id>/', eliminar, name="eliminar"),
     path('modificar/<id>/', modificar_automovil, name="modificar"),
+    path('auto-pdf/', auto_pdf, name="auto_pdf"),
 ]

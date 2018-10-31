@@ -53,7 +53,10 @@ INSTALLED_APPS = [
     'core',
     'accounts',
     'social_django',
+    'crispy_forms',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 MIDDLEWARE = [

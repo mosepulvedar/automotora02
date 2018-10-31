@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Automoviles</title>
+    <style>
+        h2 {
+            color:red;
+        }
+
+        .tabla {
+            width: 120px;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Informe automoviles</h2>
+
+    
+<table class="tabla">
+        <tr>
+            <td>Patente</td>
+            <td>Marca</td>
+            <td>Modelo</td>
+            <td>Año</td>
+            
+        </tr>
+        {# por cada fila de la BBDD creamos una fila de la tabla #}
+         {% for a in autos %}
+    
+        <tr>
+            <td>{{ a.patente }}</td>
+            <td>{{ a.marca.nombre }}</td>
+            <td>{{ a.modelo }}</td>
+            <td>{{ a.anio }}</td>
+        </tr>
+    
+        {% endfor %}
+    </table>
+<div style="page-break-after: always"></div>
+<h2>mensaje</h2>
+</body>
+</html>
